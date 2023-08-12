@@ -1,0 +1,12 @@
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\bin\Debug\net6.0\VehiclesLibrary.deps.json
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\bin\Debug\net6.0\VehiclesLibrary.dll
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\bin\Debug\net6.0\VehiclesLibrary.pdb
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\obj\Debug\net6.0\VehiclesLibrary.csproj.AssemblyReference.cache
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\obj\Debug\net6.0\VehiclesLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\obj\Debug\net6.0\VehiclesLibrary.AssemblyInfoInputs.cache
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\obj\Debug\net6.0\VehiclesLibrary.AssemblyInfo.cs
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\obj\Debug\net6.0\VehiclesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\obj\Debug\net6.0\VehiclesLibrary.dll
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\obj\Debug\net6.0\refint\VehiclesLibrary.dll
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\obj\Debug\net6.0\VehiclesLibrary.pdb
+C:\Users\17739\source\repos\Vehicles\VehiclesLibrary\obj\Debug\net6.0\ref\VehiclesLibrary.dll

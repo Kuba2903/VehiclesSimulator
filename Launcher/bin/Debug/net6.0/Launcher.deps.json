@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Launcher/1.0.0": {
+        "dependencies": {
+          "VehiclesLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Launcher.dll": {}
+        }
+      },
+      "VehiclesLibrary/1.0.0": {
+        "runtime": {
+          "VehiclesLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Launcher/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VehiclesLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
