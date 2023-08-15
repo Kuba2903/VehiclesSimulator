@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace VehiclesLibrary.LandVehicles
 {
-    public class Car : LandVehicle
+    public class ElectricBoard : LandVehicle
     {
+        public override int MaxSpeed { get; protected set; } = 40;
 
-        //Speed is counted in Km/h
-        public override int MaxSpeed { get; protected set; } = 350;
-        public Car(string brand,FuelType fuel)
+        public ElectricBoard(string brand)
         {
             IsEngineVehicle = true;
-            WheelNum = 4;
+            WheelNum = 2;
             Brand = brand;
-            Fuel = fuel.ToString();
+            Fuel = FuelType.Electric.ToString();
         }
 
         public void StartOn()
@@ -30,7 +29,7 @@ namespace VehiclesLibrary.LandVehicles
 
         public void TurnOff()
         {
-            if(IsStarted)
+            if (IsStarted)
             {
                 IsStarted = false;
                 IsMoving = false;
@@ -39,7 +38,7 @@ namespace VehiclesLibrary.LandVehicles
             }
         }
 
-        public override string ToString() => $"Vehicle type and environment: {VehicleType.car} / {EnvironmentEnum.Land} \n  Brand: {Brand} \n Fuel Type: {Fuel} \n" +
+        public override string ToString() => $"Vehicle type and environment: {VehicleType.electricBoard} / {EnvironmentEnum.Land} \n  Brand: {Brand} \n Fuel Type: {Fuel} \n" +
             $"Is the car moving:{IsMoving} \n Max possible speed: {MaxSpeed} \n Actual Speed: {Speed} \n Is it motor engine: {IsEngineVehicle} \n" +
             $"Number of wheels: {WheelNum}";
     }

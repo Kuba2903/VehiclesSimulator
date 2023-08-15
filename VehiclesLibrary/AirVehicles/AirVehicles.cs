@@ -4,20 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehiclesLibrary.LandVehicles
+namespace VehiclesLibrary
 {
-    public class MotorBike : LandVehicle
+    public class AirVehicles : VehiclesAbstract
     {
-        //Speed is counted in Km/h
-        private int MaxSpeed { get; } = 350;
+        public override int MaxSpeed { get; protected set; } = 200;
+        public int MinSpeed { get; set; } = 20;
+        public enum VehicleType { airplane, helicopter }
+        public bool IsStarted { get; protected set; } = false;
+        public bool IsVehicleInAir { get; set; } = false;
 
-        public MotorBike(string brand, FuelType fuel)
-        {
-            IsEngineVehicle = true;
-            WheelNum = 2;
-            Brand = brand;
-            Fuel = fuel.ToString();
-        }
         public void StartOn()
         {
             if (!IsStarted)
@@ -29,25 +25,28 @@ namespace VehiclesLibrary.LandVehicles
 
         public void TurnOff()
         {
-            if (IsStarted)
+            if (IsStarted && !IsVehicleInAir)
             {
                 IsStarted = false;
+                IsMoving = false;
+                Speed = 0;
                 Console.WriteLine("Vehicle is off");
             }
         }
-
         public override void Accelerate(int speed)
         {
             if (IsStarted && speed > 0)
             {
-                int tempSpeed = Speed += speed;
+                int tempSpeed = Speed;
+                tempSpeed += speed;
+
                 if (tempSpeed <= MaxSpeed)
                 {
                     Speed = tempSpeed;
                     IsMoving = true;
                 }
-                else if (tempSpeed > MaxSpeed)
-                    Console.WriteLine("Your motorbike can't go faster than 350 km/h");
+                if (tempSpeed > MaxSpeed)
+                    Console.WriteLine("Your vehicle can't go any faster");
             }
         }
 
@@ -66,9 +65,5 @@ namespace VehiclesLibrary.LandVehicles
 
             }
         }
-
-        public override string ToString() => $"Vehicle type and environment: {VehicleType.motorbike} / {EnvironmentEnum.Land} \n  Brand: {Brand} \n Fuel Type: {Fuel} \n" +
-            $"Is the car moving:{IsMoving} \n Max possible speed: {MaxSpeed} \n Actual Speed: {Speed} \n Is it motor engine: {IsEngineVehicle} \n" +
-            $"Number of wheels: {WheelNum}";
     }
 }

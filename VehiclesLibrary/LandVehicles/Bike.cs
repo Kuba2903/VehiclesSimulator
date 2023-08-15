@@ -6,34 +6,16 @@ using System.Threading.Tasks;
 
 namespace VehiclesLibrary.LandVehicles
 {
-    public class MotorBike : LandVehicle
+    public class Bike : LandVehicle
     {
-        //Speed is counted in Km/h
-        private int MaxSpeed { get; } = 350;
-
-        public MotorBike(string brand, FuelType fuel)
+        public int MaxSpeed { get; } = 50;
+        public Bike(string brand)
         {
-            IsEngineVehicle = true;
+            IsStarted = true;
+            IsEngineVehicle = false;
             WheelNum = 2;
+            Fuel = null;
             Brand = brand;
-            Fuel = fuel.ToString();
-        }
-        public void StartOn()
-        {
-            if (!IsStarted)
-            {
-                IsStarted = true;
-                Console.WriteLine("Vehicle started");
-            }
-        }
-
-        public void TurnOff()
-        {
-            if (IsStarted)
-            {
-                IsStarted = false;
-                Console.WriteLine("Vehicle is off");
-            }
         }
 
         public override void Accelerate(int speed)
@@ -47,7 +29,7 @@ namespace VehiclesLibrary.LandVehicles
                     IsMoving = true;
                 }
                 else if (tempSpeed > MaxSpeed)
-                    Console.WriteLine("Your motorbike can't go faster than 350 km/h");
+                    Console.WriteLine("Your car can't go faster than 350 km/h");
             }
         }
 
@@ -67,7 +49,7 @@ namespace VehiclesLibrary.LandVehicles
             }
         }
 
-        public override string ToString() => $"Vehicle type and environment: {VehicleType.motorbike} / {EnvironmentEnum.Land} \n  Brand: {Brand} \n Fuel Type: {Fuel} \n" +
+        public override string ToString() => $"Vehicle type and environment: {VehicleType.bike} / {EnvironmentEnum.Land} \n  Brand: {Brand} \n" +
             $"Is the car moving:{IsMoving} \n Max possible speed: {MaxSpeed} \n Actual Speed: {Speed} \n Is it motor engine: {IsEngineVehicle} \n" +
             $"Number of wheels: {WheelNum}";
     }
