@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehiclesLibrary.LandVehicles
 {
-    public class Car : LandVehicle
+    public sealed class Car : LandVehicle
     {
 
         //Speed is counted in Km/h

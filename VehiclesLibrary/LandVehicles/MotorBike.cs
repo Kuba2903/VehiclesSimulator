@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehiclesLibrary.LandVehicles
 {
-    public class MotorBike : LandVehicle
+    public sealed class MotorBike : LandVehicle
     {
         //Speed is counted in Km/h
         private int MaxSpeed { get; } = 350;

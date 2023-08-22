@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehiclesLibrary.LandVehicles
 {
-    public class Bike : LandVehicle
+    public sealed class Bike : LandVehicle
     {
         public int MaxSpeed { get; } = 50;
         public Bike(string brand)

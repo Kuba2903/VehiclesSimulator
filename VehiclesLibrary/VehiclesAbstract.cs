@@ -18,8 +18,7 @@ namespace VehiclesLibrary
         public string? Fuel { get; protected set; }
         public abstract void Accelerate(int speed);
         public abstract void Decelerate(int speed);
-
     }
 
-
+    
 }

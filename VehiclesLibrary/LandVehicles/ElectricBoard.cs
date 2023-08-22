@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehiclesLibrary.LandVehicles
 {
-    public class ElectricBoard : LandVehicle
+    public sealed class ElectricBoard : LandVehicle
     {
         public override int MaxSpeed { get; protected set; } = 40;
 

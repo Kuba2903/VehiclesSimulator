@@ -8,12 +8,24 @@ namespace VehiclesLibrary
 {
     public sealed class Airplane : AirVehicles
     {
+        private string Environment { get; set; }
 
+        //airplane is slower in land environment than in air environment
+        public override int MaxSpeed
+        {
+            get
+            {
+                if (Environment == EnvironmentEnum.Land.ToString())
+                    return 50;
+                else return 200;
+            }
+        }
         public Airplane(string brand, FuelType fuel)
         {
             Brand = brand;
             Fuel = fuel.ToString();
             IsEngineVehicle = true;
+            Environment = EnvironmentEnum.Land.ToString();
         }
 
         public void FlyToTheAir()
@@ -21,6 +33,7 @@ namespace VehiclesLibrary
             if(Speed >= MinSpeed)
             {
                 IsVehicleInAir = true;
+                this.Environment = EnvironmentEnum.Air.ToString();
                 Console.WriteLine("The airplane soars to the air");
             }
         }
@@ -30,11 +43,12 @@ namespace VehiclesLibrary
             if(Speed == MinSpeed)
             {
                 IsVehicleInAir = false;
+                this.Environment = EnvironmentEnum.Land.ToString();
                 Console.WriteLine("The airplane is landing to the ground");
             }
         }
 
-        public override string ToString() => $"Vehicle type and environment: {VehicleType.airplane} / {EnvironmentEnum.Air} \n  Brand: {Brand} \n Fuel Type: {Fuel} \n" +
+        public override string ToString() => $"Vehicle type and environment: {VehicleType.airplane} / {Environment} \n  Brand: {Brand} \n Fuel Type: {Fuel} \n" +
             $"Is the vehicle moving:{IsMoving} \n Max possible speed: {MaxSpeed} \n Actual Speed: {Speed} \n Is it motor engine: {IsEngineVehicle} \n" +
             $"Is the vehicle in air: {IsVehicleInAir}";
     }

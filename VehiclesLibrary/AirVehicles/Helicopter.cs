@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace VehiclesLibrary { 
-    public class Helicopter : AirVehicles
+    public sealed class Helicopter : AirVehicles
     {
 
         public Helicopter(string brand, FuelType fuel)

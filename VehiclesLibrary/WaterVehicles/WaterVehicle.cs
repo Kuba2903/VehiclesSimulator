@@ -4,43 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehiclesLibrary
+namespace VehiclesLibrary.WaterVehicles
 {
-    public class AirVehicles : VehiclesAbstract
+    public class WaterVehicle : VehiclesAbstract
     {
-        // the speed is measured in m/s
-        public override int MaxSpeed { get; protected set; } = 200;
-        public int MinSpeed { get; set; } = 20;
-        public enum VehicleType { airplane, helicopter }
+        //speed measured in knots
+        public override int MaxSpeed { get; protected set; } = 40;
+        public int Displacement { get; set; }
+
+        public enum VehicleType {ship, boat, motorboat, hovercraft, amphibian}
         public bool IsStarted { get; protected set; } = false;
-        public bool IsVehicleInAir { get; set; } = false;
 
-        public void StartOn()
-        {
-            if (!IsStarted)
-            {
-                IsStarted = true;
-                Console.WriteLine("Vehicle started");
-            }
-        }
-
-        public void TurnOff()
-        {
-            if (IsStarted && !IsVehicleInAir)
-            {
-                IsStarted = false;
-                IsMoving = false;
-                Speed = 0;
-                Console.WriteLine("Vehicle is off");
-            }
-        }
         public override void Accelerate(int speed)
         {
             if (IsStarted && speed > 0)
             {
                 int tempSpeed = Speed;
                 tempSpeed += speed;
-
                 if (tempSpeed <= MaxSpeed)
                 {
                     Speed = tempSpeed;
