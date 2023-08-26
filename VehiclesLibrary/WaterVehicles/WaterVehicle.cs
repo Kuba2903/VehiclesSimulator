@@ -15,6 +15,7 @@ namespace VehiclesLibrary.WaterVehicles
         public enum VehicleType {ship, boat, motorboat, hovercraft, amphibian}
         public bool IsStarted { get; protected set; } = false;
 
+
         public override void Accelerate(int speed)
         {
             if (IsStarted && speed > 0)
@@ -45,6 +46,21 @@ namespace VehiclesLibrary.WaterVehicles
                 }
 
             }
+        }
+
+        public delegate void UnitConverterEventHandler(object source, EventArgs e);
+        public event UnitConverterEventHandler UnitConverter;
+
+        protected virtual void OnUnitConverter(UnitConverter converter)
+        {
+            if (UnitConverter != null)
+                UnitConverter(this,EventArgs.Empty);
+        }
+
+        public void ShowSpeed(UnitConverter converter)
+        {
+            Console.WriteLine("speed in knots " + Speed);
+            OnUnitConverter(converter);
         }
     }
 }

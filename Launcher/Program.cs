@@ -6,13 +6,12 @@ class Program
 {
     public static void Main(string[] args)
     {
-        Hovercraft hovercraft = new Hovercraft(null, 100);
-        hovercraft.StartOn();
-        hovercraft.Accelerate(20);
-        Console.WriteLine(hovercraft);
-        hovercraft.SwimOnWater();
-        hovercraft.Accelerate(20);
-        Console.WriteLine(hovercraft);
+        Airplane airplane = new Airplane("lot",VehiclesAbstract.FuelType.Diesel);
+
+        airplane.StartOn();
+        airplane.Accelerate(15);
+
         
+        Console.WriteLine(UnitConverter.MsToKnots(airplane));
     }
 }

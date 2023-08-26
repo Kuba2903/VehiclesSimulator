@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehiclesLibrary.WaterVehicles
 {
-    public class Ship : WaterVehicle
+    public sealed class Ship : WaterVehicle
     {
         public Ship(string brand, int displacement)
         {

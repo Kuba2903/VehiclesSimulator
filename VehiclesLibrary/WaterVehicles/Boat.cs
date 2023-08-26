@@ -7,7 +7,7 @@ using static VehiclesLibrary.VehiclesAbstract;
 
 namespace VehiclesLibrary.WaterVehicles
 {
-    public class Boat : WaterVehicle
+    public sealed class Boat : WaterVehicle
     {
         public Boat(string brand, int displacement)
         {

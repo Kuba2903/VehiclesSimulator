@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehiclesLibrary.WaterVehicles
 {
-    public class Hovercraft : WaterVehicle
+    public sealed class Hovercraft : WaterVehicle
     {
         private string Environment { get; set; }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehiclesLibrary.WaterVehicles
 {
-    public class Amphibian : WaterVehicle
+    public sealed class Amphibian : WaterVehicle
     {
         private string Environment { get; set; }
 
@@ -47,6 +47,8 @@ namespace VehiclesLibrary.WaterVehicles
                 Environment = EnvironmentEnum.Land.ToString();
             }
         }
+
+        
 
         public override string ToString() => $"Vehicle type and environment: {VehicleType.amphibian} / {Environment} \n  Brand: {Brand} \n Fuel Type: {Fuel} \n" +
             $"Is the vehicle moving:{IsMoving} \n Max possible speed: {MaxSpeed} \n Actual Speed: {Speed} \n Is it motor engine: {IsEngineVehicle} \n" +
