@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehiclesLibrary
 {
-    public class AirVehicles : VehiclesAbstract
+    public class AirVehicles : VehiclesAbstract, IUnitConverterDel
     {
         // the speed is measured in m/s
         public override int MaxSpeed { get; protected set; } = 200;
@@ -14,6 +14,8 @@ namespace VehiclesLibrary
         public enum VehicleType { airplane, helicopter }
         public bool IsStarted { get; protected set; } = false;
         public bool IsVehicleInAir { get; set; } = false;
+
+        public event IUnitConverterDel.UnitConverterEventHandler UnitConverter;
 
         public void StartOn()
         {
@@ -65,6 +67,18 @@ namespace VehiclesLibrary
                 }
 
             }
+        }
+
+        protected virtual void OnUnitConverter(UnitConverter converter)
+        {
+            if (UnitConverter != null)
+                UnitConverter(this, EventArgs.Empty);
+        }
+
+        public void ShowSpeed(UnitConverter converter)
+        {
+            Console.WriteLine("speed in m/s " + Speed);
+            OnUnitConverter(converter);
         }
     }
 }

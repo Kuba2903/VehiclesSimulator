@@ -52,43 +52,74 @@ namespace VehiclesLibrary
 
         public void OnUnitConverter(object source, EventArgs e)
         {
-            if(source is Amphibian amphibian)
+            switch (source)
             {
-                double kmh = KnotsToKmh((Amphibian)source);
-                double ms = KnotsToMs((Amphibian)source);
-                Console.WriteLine("speed in kmh " + kmh);
-                Console.WriteLine("speed in m/s " + ms);
-            }
-
-            else if(source is Hovercraft hovercraft)
-            {
-                double kmh = KnotsToKmh((Hovercraft)source);
-                double ms = KnotsToMs((Hovercraft)source);
-                Console.WriteLine("speed in kmh " + kmh);
-                Console.WriteLine("speed in m/s " + ms);
-            }
-
-            else if (source is Boat boat)
-            {
-                double kmh = KnotsToKmh((Boat)source);
-                double ms = KnotsToMs((Boat)source);
-                Console.WriteLine("speed in kmh " + kmh);
-                Console.WriteLine("speed in m/s " + ms);
-            }
-
-            else if (source is Motorboat motorboat)
-            {
-                double kmh = KnotsToKmh((Motorboat)source);
-                double ms = KnotsToMs((Motorboat)source);
-                Console.WriteLine("speed in kmh " + kmh);
-                Console.WriteLine("speed in m/s " + ms);
-            }
-            else if (source is Ship ship)
-            {
-                double kmh = KnotsToKmh((Ship)source);
-                double ms = KnotsToMs((Ship)source);
-                Console.WriteLine("speed in kmh " + kmh);
-                Console.WriteLine("speed in m/s " + ms);
+                case Ship:
+                    double kmh = KnotsToKmh((Ship)source);
+                    double ms = KnotsToMs((Ship)source);
+                    Console.WriteLine("speed in kmh " + kmh);
+                    Console.WriteLine("speed in m/s " + ms);
+                    break;
+                case Motorboat:
+                    kmh = KnotsToKmh((Motorboat)source);
+                    ms = KnotsToMs((Motorboat)source);
+                    Console.WriteLine("speed in kmh " + kmh);
+                    Console.WriteLine("speed in m/s " + ms);
+                    break;
+                case Boat:
+                    kmh = KnotsToKmh((Boat)source);
+                    ms = KnotsToMs((Boat)source);
+                    Console.WriteLine("speed in kmh " + kmh);
+                    Console.WriteLine("speed in m/s " + ms);
+                    break;
+                case Hovercraft:
+                    kmh = KnotsToKmh((Hovercraft)source);
+                    ms = KnotsToMs((Hovercraft)source);
+                    Console.WriteLine("speed in kmh " + kmh);
+                    Console.WriteLine("speed in m/s " + ms);
+                    break;
+                case Amphibian:
+                    kmh = KnotsToKmh((Amphibian)source);
+                    ms = KnotsToMs((Amphibian)source);
+                    Console.WriteLine("speed in kmh " + kmh);
+                    Console.WriteLine("speed in m/s " + ms);
+                    break;
+                case Bike:
+                    double knots = KmhToKnots((Bike)source);
+                    ms = KmhToMs((Bike)source);
+                    Console.WriteLine("speed in m/s " + ms);
+                    Console.WriteLine("speed in knots " + knots);
+                    break;
+                case Car:
+                    knots = KmhToKnots((Car)source);
+                    ms = KmhToMs((Car)source);
+                    Console.WriteLine("speed in m/s " + ms);
+                    Console.WriteLine("speed in knots " + knots);
+                    break;
+                case ElectricBoard:
+                    knots = KmhToKnots((ElectricBoard)source);
+                    ms = KmhToMs((ElectricBoard)source);
+                    Console.WriteLine("speed in m/s " + ms);
+                    Console.WriteLine("speed in knots " + knots);
+                    break;
+                case MotorBike:
+                    knots = KmhToKnots((MotorBike)source);
+                    ms = KmhToMs((MotorBike)source);
+                    Console.WriteLine("speed in m/s " + ms);
+                    Console.WriteLine("speed in knots " + knots);
+                    break;
+                case Airplane:
+                    kmh = MsToKmh((Airplane)source);
+                    knots = MsToKnots((Airplane)source);
+                    Console.WriteLine("speed in kmh " + kmh);
+                    Console.WriteLine("speed in knots " + knots);
+                    break;
+                case Helicopter:
+                    kmh = MsToKmh((Helicopter)source);
+                    knots = MsToKnots((Helicopter)source);
+                    Console.WriteLine("speed in kmh " + kmh);
+                    Console.WriteLine("speed in knots " + knots);
+                    break;
             }
 
         }

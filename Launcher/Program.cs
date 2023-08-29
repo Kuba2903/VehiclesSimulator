@@ -6,12 +6,13 @@ class Program
 {
     public static void Main(string[] args)
     {
-        Airplane airplane = new Airplane("lot",VehiclesAbstract.FuelType.Diesel);
+        Bike bike = new Bike(null);
+        UnitConverter unitConverter = new UnitConverter();
 
-        airplane.StartOn();
-        airplane.Accelerate(15);
+        bike.Accelerate(15);
 
-        
-        Console.WriteLine(UnitConverter.MsToKnots(airplane));
+        bike.UnitConverter += unitConverter.OnUnitConverter;
+        bike.ShowSpeed(unitConverter);
+
     }
 }

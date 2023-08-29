@@ -1,11 +1,13 @@
 ﻿namespace VehiclesLibrary.LandVehicles
 {
-    public class LandVehicle : VehiclesAbstract
+    public class LandVehicle : VehiclesAbstract, IUnitConverterDel
     {
         public int WheelNum { get; protected set; }
         public enum VehicleType { car, motorbike, bike, scooter, electricBoard }
         public bool IsStarted { get; protected set; } = false;
         public override int MaxSpeed { get; protected set; } = 350;
+
+        public event IUnitConverterDel.UnitConverterEventHandler UnitConverter;
 
         public override void Accelerate(int speed)
         {
@@ -37,6 +39,18 @@
                 }
 
             }
+        }
+
+        protected virtual void OnUnitConverter(UnitConverter converter)
+        {
+            if (UnitConverter != null)
+                UnitConverter(this, EventArgs.Empty);
+        }
+
+        public void ShowSpeed(UnitConverter converter)
+        {
+            Console.WriteLine("speed in km/h " + Speed);
+            OnUnitConverter(converter);
         }
     }
 }
