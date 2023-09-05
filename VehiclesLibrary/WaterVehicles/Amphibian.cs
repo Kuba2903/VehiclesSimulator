@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace VehiclesLibrary.WaterVehicles
 {
+    [Serializable]
+    [DataContract(IsReference = true)]
     public sealed class Amphibian : WaterVehicle
     {
         private string Environment { get; set; }

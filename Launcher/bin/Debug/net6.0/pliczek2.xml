@@ -1,0 +1,1 @@
+<Airplane z:Id="i1" xmlns="http://schemas.datacontract.org/2004/07/VehiclesLibrary" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/"><IsEngineVehicle>true</IsEngineVehicle><IsMoving>true</IsMoving><MaxSpeed>50</MaxSpeed><Speed>5</Speed><Brand>lot</Brand><Fuel>Diesel</Fuel><MinSpeed>20</MinSpeed></Airplane>

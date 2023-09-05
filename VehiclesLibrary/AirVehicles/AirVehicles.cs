@@ -1,15 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using VehiclesLibrary.LandVehicles;
 
 namespace VehiclesLibrary
 {
-    public class AirVehicles : VehiclesAbstract, IUnitConverterDel
+    [Serializable]
+    [DataContract(IsReference = true)]
+    public class AirVehicles : VehiclesAbstract, IUnitConverterDel, ICloneable
     {
         // the speed is measured in m/s
+        [DataMember]
         public override int MaxSpeed { get; protected set; } = 200;
+        [DataMember]
         public int MinSpeed { get; set; } = 20;
         public enum VehicleType { airplane, helicopter }
         public bool IsStarted { get; protected set; } = false;
@@ -79,6 +85,15 @@ namespace VehiclesLibrary
         {
             Console.WriteLine("speed in m/s " + Speed);
             OnUnitConverter(converter);
+        }
+
+        object ICloneable.Clone() => this.MemberwiseClone();
+        public AirVehicles Clone() => (AirVehicles)this.MemberwiseClone();
+
+        public AirVehicles DeepClone()
+        {
+            AirVehicles clone = this.Clone();
+            return clone;
         }
     }
 }

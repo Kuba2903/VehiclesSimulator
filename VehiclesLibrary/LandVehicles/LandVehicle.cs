@@ -1,10 +1,16 @@
-﻿namespace VehiclesLibrary.LandVehicles
+﻿using System.Runtime.Serialization;
+
+namespace VehiclesLibrary.LandVehicles
 {
-    public class LandVehicle : VehiclesAbstract, IUnitConverterDel
+    [Serializable]
+    [DataContract (IsReference = true)]
+    public class LandVehicle : VehiclesAbstract, IUnitConverterDel, ICloneable
     {
         public int WheelNum { get; protected set; }
+
         public enum VehicleType { car, motorbike, bike, scooter, electricBoard }
         public bool IsStarted { get; protected set; } = false;
+        [DataMember]
         public override int MaxSpeed { get; protected set; } = 350;
 
         public event IUnitConverterDel.UnitConverterEventHandler UnitConverter;
@@ -51,6 +57,15 @@
         {
             Console.WriteLine("speed in km/h " + Speed);
             OnUnitConverter(converter);
+        }
+
+        object ICloneable.Clone() => this.MemberwiseClone();
+        public LandVehicle Clone() => (LandVehicle)this.MemberwiseClone();
+
+        public LandVehicle DeepClone()
+        {
+            LandVehicle clone = this.Clone();
+            return clone;
         }
     }
 }

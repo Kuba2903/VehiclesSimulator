@@ -1,18 +1,23 @@
 ﻿using VehiclesLibrary;
 using VehiclesLibrary.LandVehicles;
 using VehiclesLibrary.WaterVehicles;
+using System.Xml;
+using System.Xml.Serialization;
 
 class Program
 {
     public static void Main(string[] args)
     {
-        Bike bike = new Bike(null);
-        UnitConverter unitConverter = new UnitConverter();
+        Airplane airplane = new Airplane("lot", VehiclesAbstract.FuelType.Diesel);
 
-        bike.Accelerate(15);
 
-        bike.UnitConverter += unitConverter.OnUnitConverter;
-        bike.ShowSpeed(unitConverter);
+        airplane.StartOn();
+        airplane.Accelerate(5);
+        XMLSerialization.SerializeToFile<Airplane>("pliczek2.xml", airplane);
 
+        var c2 = XMLSerialization.DeserializeFromFile<Airplane>("pliczek2.xml");
+
+        Console.WriteLine(c2.Brand);
+        
     }
 }

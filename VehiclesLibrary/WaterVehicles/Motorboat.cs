@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace VehiclesLibrary.WaterVehicles
 {
+    [Serializable]
+    [DataContract(IsReference = true)]
     public sealed class Motorboat : WaterVehicle
     {
-
+        
         public Motorboat(string brand, int displacement)
         {
             IsEngineVehicle = true;

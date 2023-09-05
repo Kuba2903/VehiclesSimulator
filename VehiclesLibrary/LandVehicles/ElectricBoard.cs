@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace VehiclesLibrary.LandVehicles
 {
+    [Serializable]
+    [DataContract(IsReference = true)]
     public sealed class ElectricBoard : LandVehicle
     {
         public override int MaxSpeed { get; protected set; } = 40;

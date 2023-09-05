@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace VehiclesLibrary.WaterVehicles
 {
+    [Serializable]
+    [DataContract(IsReference = true)]
     public sealed class Hovercraft : WaterVehicle
     {
+        
         private string Environment { get; set; }
 
         //the hovercraft goes faster on water than on land
