@@ -3,21 +3,27 @@ using VehiclesLibrary.LandVehicles;
 using VehiclesLibrary.WaterVehicles;
 using System.Xml;
 using System.Xml.Serialization;
+using VehiclesLibrary.Data;
+using VehiclesLibrary.Models;
 
 class Program
 {
     public static void Main(string[] args)
     {
+        
+
+
+        using VehiclesContext context = new VehiclesContext();
         Airplane airplane = new Airplane("lot", VehiclesAbstract.FuelType.Diesel);
-
-
-        airplane.StartOn();
-        airplane.Accelerate(5);
-        XMLSerialization.SerializeToFile<Airplane>("pliczek2.xml", airplane);
-
-        var c2 = XMLSerialization.DeserializeFromFile<Airplane>("pliczek2.xml");
-
-        Console.WriteLine(c2.Brand);
+        AirVehiclesModel air = new AirVehiclesModel()
+        {
+            Brand = airplane.Brand,
+            VehicleType = "airplane",
+            FuelType = airplane.Fuel,
+            MaxSpeed = (short)airplane.MaxSpeed
+        };
+        context.AirVehicles.Add(air);
+        context.SaveChanges();
         
     }
 }
