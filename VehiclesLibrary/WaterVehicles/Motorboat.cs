@@ -31,7 +31,10 @@ namespace VehiclesLibrary.WaterVehicles
         public void TurnOff()
         {
             if (IsStarted)
+            {
                 IsStarted = false;
+                Speed = 0;
+            }
             else
                 IsStarted = true;
         }

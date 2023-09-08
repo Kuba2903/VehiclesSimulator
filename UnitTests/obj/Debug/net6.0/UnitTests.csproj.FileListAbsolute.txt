@@ -152,3 +152,6 @@ C:\Users\17739\source\repos\Vehicles\UnitTests\obj\Debug\net6.0\refint\UnitTests
 C:\Users\17739\source\repos\Vehicles\UnitTests\obj\Debug\net6.0\UnitTests.pdb
 C:\Users\17739\source\repos\Vehicles\UnitTests\obj\Debug\net6.0\UnitTests.genruntimeconfig.cache
 C:\Users\17739\source\repos\Vehicles\UnitTests\obj\Debug\net6.0\ref\UnitTests.dll
+C:\Users\17739\source\repos\Vehicles\UnitTests\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\17739\source\repos\Vehicles\UnitTests\bin\Debug\net6.0\VehiclesLibrary.dll
+C:\Users\17739\source\repos\Vehicles\UnitTests\bin\Debug\net6.0\VehiclesLibrary.pdb

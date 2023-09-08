@@ -1625,6 +1625,19 @@
             "rid": "win"
           }
         }
+      },
+      "VehiclesLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10"
+        },
+        "compile": {
+          "bin/placeholder/VehiclesLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VehiclesLibrary.dll": {}
+        }
       }
     }
   },
@@ -5059,6 +5072,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "VehiclesLibrary/1.0.0": {
+      "type": "project",
+      "path": "../VehiclesLibrary/VehiclesLibrary.csproj",
+      "msbuildProject": "../VehiclesLibrary/VehiclesLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5069,6 +5087,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.10",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
+      "VehiclesLibrary >= 1.0.0",
       "coverlet.collector >= 3.2.0"
     ]
   },
@@ -5098,7 +5117,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\17739\\source\\repos\\Vehicles\\VehiclesLibrary\\VehiclesLibrary.csproj": {
+              "projectPath": "C:\\Users\\17739\\source\\repos\\Vehicles\\VehiclesLibrary\\VehiclesLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
