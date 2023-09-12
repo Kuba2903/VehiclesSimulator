@@ -23,6 +23,9 @@ namespace VehiclesLibrary
 
         public event IUnitConverterDel.UnitConverterEventHandler UnitConverter;
 
+        /// <summary>
+        /// Starts the vehicle
+        /// </summary>
         public void StartOn()
         {
             if (!IsStarted)
@@ -32,6 +35,9 @@ namespace VehiclesLibrary
             }
         }
 
+        /// <summary>
+        /// Turns off the vehicle
+        /// </summary>
         public void TurnOff()
         {
             if (IsStarted && !IsVehicleInAir)
@@ -42,6 +48,11 @@ namespace VehiclesLibrary
                 Console.WriteLine("Vehicle is off");
             }
         }
+
+        /// <summary>
+        /// Accelerates the vehicle speed by the number given in parameter
+        /// </summary>
+        /// <param name="speed">The speed is given in m/s</param>
         public override void Accelerate(int speed)
         {
             if (IsStarted && speed > 0)
@@ -59,6 +70,10 @@ namespace VehiclesLibrary
             }
         }
 
+        /// <summary>
+        /// Decelerates the vehicle speed by the number given in parameter
+        /// </summary>
+        /// <param name="speed">The speed is given in m/s</param>
         public override void Decelerate(int speed)
         {
             if (IsStarted && speed > 0)
@@ -81,6 +96,10 @@ namespace VehiclesLibrary
                 UnitConverter(this, EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Shows speed in three different units (km/h, m/s, knots)
+        /// </summary>
+        /// <param name="converter"></param>
         public void ShowSpeed(UnitConverter converter)
         {
             Console.WriteLine("speed in m/s " + Speed);
@@ -90,6 +109,10 @@ namespace VehiclesLibrary
         object ICloneable.Clone() => this.MemberwiseClone();
         public AirVehicles Clone() => (AirVehicles)this.MemberwiseClone();
 
+        /// <summary>
+        /// Makes a copy of the object with the exact same parameters
+        /// </summary>
+        /// <returns></returns>
         public AirVehicles DeepClone()
         {
             AirVehicles clone = this.Clone();

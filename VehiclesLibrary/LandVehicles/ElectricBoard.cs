@@ -21,6 +21,9 @@ namespace VehiclesLibrary.LandVehicles
             Fuel = FuelType.Electric.ToString();
         }
 
+        /// <summary>
+        /// Starting the board
+        /// </summary>
         public void StartOn()
         {
             if (!IsStarted)
@@ -30,6 +33,9 @@ namespace VehiclesLibrary.LandVehicles
             }
         }
 
+        /// <summary>
+        /// Turning off
+        /// </summary>
         public void TurnOff()
         {
             if (IsStarted)

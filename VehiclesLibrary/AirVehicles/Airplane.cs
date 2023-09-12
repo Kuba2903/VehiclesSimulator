@@ -31,6 +31,9 @@ namespace VehiclesLibrary
             Environment = EnvironmentEnum.Land.ToString();
         }
 
+        /// <summary>
+        /// The airplane flies to the air from the ground, when the speed is more than 20 m/s
+        /// </summary>
         public void FlyToTheAir()
         {
             if(Speed >= MinSpeed)
@@ -41,6 +44,9 @@ namespace VehiclesLibrary
             }
         }
 
+        /// <summary>
+        /// The airplane lands to the ground when the speed is exactly 20 m/s
+        /// </summary>
         public void LandToTheGround()
         {
             if(Speed == MinSpeed)

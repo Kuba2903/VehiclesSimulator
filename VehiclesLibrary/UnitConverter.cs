@@ -11,7 +11,11 @@ namespace VehiclesLibrary
     public class UnitConverter
     {
 
-        /// Knots
+        /// <summary>
+        /// Converts knots to km/h
+        /// </summary>
+        /// <param name="amphibian"></param>
+        /// <returns></returns>
         public static double KnotsToKmh(Amphibian amphibian) => amphibian.Speed * 1.852;
 
         public static double KnotsToKmh(Boat boat) => boat.Speed * 1.852;
@@ -21,7 +25,11 @@ namespace VehiclesLibrary
         public static double KnotsToKmh(Ship ship) => ship.Speed * 1.852;
 
 
-
+        /// <summary>
+        /// Converts knots to m/s
+        /// </summary>
+        /// <param name="amphibian"></param>
+        /// <returns></returns>
         public static double KnotsToMs(Amphibian amphibian) => Math.Round(amphibian.Speed / 1.9438444924406, 3);
         public static double KnotsToMs(Boat boat) => Math.Round(boat.Speed / 1.9438444924406, 3);
         public static double KnotsToMs(Hovercraft hovercraft) => Math.Round(hovercraft.Speed / 1.9438444924406, 3);
@@ -31,12 +39,21 @@ namespace VehiclesLibrary
 
 
 
-
+        /// <summary>
+        /// Converts km/h to m/s
+        /// </summary>
+        /// <param name="bike"></param>
+        /// <returns></returns>
         public static double KmhToMs(Bike bike) => Math.Round( bike.Speed / 3.6,3);
         public static double KmhToMs(Car car) => Math.Round( car.Speed / 3.6,3);
         public static double KmhToMs(ElectricBoard board) => Math.Round( board.Speed / 3.6,3);
         public static double KmhToMs(MotorBike bike) => Math.Round( bike.Speed / 3.6,3);
 
+        /// <summary>
+        /// Converts km/h to knots
+        /// </summary>
+        /// <param name="bike"></param>
+        /// <returns></returns>
         public static double KmhToKnots(Bike bike) => Math.Round(bike.Speed * 0.539957, 3);
         public static double KmhToKnots(Car car) => Math.Round(car.Speed * 0.539957, 3);
         public static double KmhToKnots(ElectricBoard board) => Math.Round(board.Speed * 0.539957, 3);
@@ -44,12 +61,26 @@ namespace VehiclesLibrary
 
 
 
-
+        /// <summary>
+        /// Converts m/s to km/h
+        /// </summary>
+        /// <param name="airplane"></param>
+        /// <returns></returns>
         public static double MsToKmh(Airplane airplane) => (airplane.Speed * 3600) / 1000;
         public static double MsToKmh(Helicopter helicopter) => (helicopter.Speed * 3600) / 1000;
+        /// <summary>
+        /// Converts m/s to knots
+        /// </summary>
+        /// <param name="airplane"></param>
+        /// <returns></returns>
         public static double MsToKnots(Airplane airplane) => Math.Round(airplane.Speed * 1.9438452, 3);
         public static double MsToKnots(Helicopter helicopter) => Math.Round(helicopter.Speed * 1.9438452, 3);
 
+        /// <summary>
+        /// Delegate method
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="e"></param>
         public void OnUnitConverter(object source, EventArgs e)
         {
             switch (source)

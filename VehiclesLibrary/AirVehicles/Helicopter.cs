@@ -18,12 +18,18 @@ namespace VehiclesLibrary {
             IsEngineVehicle = true;
         }
 
+        /// <summary>
+        /// The helicopter soars into the air
+        /// </summary>
         public void FlyToTheAir()
         {
             IsVehicleInAir = true;
             Console.WriteLine("The helicopter soars to the air");
         }
 
+        /// <summary>
+        /// The helicopter can land to the ground when the speed is at 20 m/s
+        /// </summary>
         public void LandToTheGround()
         {
             if (Speed == MinSpeed)

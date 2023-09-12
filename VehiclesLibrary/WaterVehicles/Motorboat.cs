@@ -20,6 +20,9 @@ namespace VehiclesLibrary.WaterVehicles
             Displacement = displacement;
         }
 
+        /// <summary>
+        /// Turning the motorboat on
+        /// </summary>
         public void StartOn()
         {
             if (!IsStarted)
@@ -28,6 +31,9 @@ namespace VehiclesLibrary.WaterVehicles
                 IsStarted = false;
         }
 
+        /// <summary>
+        /// Turning the motorboat off
+        /// </summary>
         public void TurnOff()
         {
             if (IsStarted)

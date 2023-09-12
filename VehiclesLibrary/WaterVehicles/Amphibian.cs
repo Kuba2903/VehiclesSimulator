@@ -35,6 +35,9 @@ namespace VehiclesLibrary.WaterVehicles
             IsStarted = true;
         }
 
+        /// <summary>
+        /// Moves from land to the water
+        /// </summary>
         public void SwimOnWater()
         {
             if (Environment == EnvironmentEnum.Land.ToString())
@@ -43,6 +46,9 @@ namespace VehiclesLibrary.WaterVehicles
             }
         }
 
+        /// <summary>
+        /// Moves from water to the land
+        /// </summary>
         public void SwimOffToLand()
         {
             if (Environment == EnvironmentEnum.Water.ToString())

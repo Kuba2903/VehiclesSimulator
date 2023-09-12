@@ -35,6 +35,9 @@ namespace VehiclesLibrary.WaterVehicles
             Environment = EnvironmentEnum.Land.ToString();
         }
 
+        /// <summary>
+        /// Turning the hovercraft on
+        /// </summary>
         public void StartOn()
         {
             if (!IsStarted)
@@ -43,6 +46,9 @@ namespace VehiclesLibrary.WaterVehicles
                 IsStarted = false;
         }
 
+        /// <summary>
+        /// Turning the hovercraft off
+        /// </summary>
         public void TurnOff()
         {
             if (IsStarted)
@@ -54,6 +60,9 @@ namespace VehiclesLibrary.WaterVehicles
                 IsStarted = true;
         }
 
+        /// <summary>
+        /// Moves from the land to the water
+        /// </summary>
         public void SwimOnWater()
         {
             if(Environment == EnvironmentEnum.Land.ToString())
@@ -62,6 +71,9 @@ namespace VehiclesLibrary.WaterVehicles
             }
         }
 
+        /// <summary>
+        /// Moves from water to the land
+        /// </summary>
         public void SwimOffToLand()
         {
             if(Environment == EnvironmentEnum.Water.ToString())

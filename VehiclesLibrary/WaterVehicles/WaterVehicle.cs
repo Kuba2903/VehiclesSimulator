@@ -23,6 +23,10 @@ namespace VehiclesLibrary.WaterVehicles
 
         public event IUnitConverterDel.UnitConverterEventHandler UnitConverter;
 
+        /// <summary>
+        /// Accelerates the vehicle speed by the number given in parameter
+        /// </summary>
+        /// <param name="speed">The speed is given in knots</param>
         public override void Accelerate(int speed)
         {
             if (IsStarted && speed > 0)
@@ -36,6 +40,10 @@ namespace VehiclesLibrary.WaterVehicles
             }
         }
 
+        /// <summary>
+        /// Decelerates the vehicle speed by the number given in parameter
+        /// </summary>
+        /// <param name="speed">The speed is given in knots</param>
         public override void Decelerate(int speed)
         {
             if (IsStarted && speed > 0)
@@ -56,6 +64,10 @@ namespace VehiclesLibrary.WaterVehicles
                 UnitConverter(this, EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Shows speed in three different units (km/h, m/s, knots)
+        /// </summary>
+        /// <param name="converter"></param>
         public void ShowSpeed(UnitConverter converter)
         {
             Console.WriteLine("speed in knots " + Speed);  
@@ -65,6 +77,10 @@ namespace VehiclesLibrary.WaterVehicles
         object ICloneable.Clone() => this.MemberwiseClone();
         public WaterVehicle Clone() => (WaterVehicle)this.MemberwiseClone();
 
+        /// <summary>
+        /// Makes a copy of the object with the exact same parameters
+        /// </summary>
+        /// <returns></returns>
         public WaterVehicle DeepClone()
         {
             WaterVehicle clone = this.Clone();

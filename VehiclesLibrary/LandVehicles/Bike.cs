@@ -32,7 +32,7 @@ namespace VehiclesLibrary.LandVehicles
                     IsMoving = true;
                 }
                 else if (tempSpeed > MaxSpeed)
-                    Console.WriteLine("Your car can't go faster than 350 km/h");
+                    Console.WriteLine("Your bike can't go faster than 50 km/h");
             }
         }
 

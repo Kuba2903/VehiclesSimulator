@@ -19,6 +19,9 @@ namespace VehiclesLibrary.WaterVehicles
             Displacement = displacement;
         }
 
+        /// <summary>
+        /// Starting the ship
+        /// </summary>
         public void StartOn()
         {
             if(!IsStarted)
@@ -27,6 +30,9 @@ namespace VehiclesLibrary.WaterVehicles
                 IsStarted = false;
         }
 
+        /// <summary>
+        /// Turning the ship off
+        /// </summary>
         public void TurnOff()
         {
             if (IsStarted)

@@ -22,6 +22,9 @@ namespace VehiclesLibrary.LandVehicles
             Fuel = fuel.ToString();
         }
 
+        /// <summary>
+        /// Starting the car
+        /// </summary>
         public void StartOn()
         {
             if (!IsStarted)
@@ -31,6 +34,9 @@ namespace VehiclesLibrary.LandVehicles
             }
         }
 
+        /// <summary>
+        /// Turning the car off
+        /// </summary>
         public void TurnOff()
         {
             if(IsStarted)

@@ -25,7 +25,15 @@ namespace VehiclesLibrary
         public string? Brand { get; protected set; }
         [DataMember (Order = 2)]
         public string? Fuel { get; protected set; }
+        /// <summary>
+        /// Accelerates the vehicle speed by the number given in parameter
+        /// </summary>
+        /// <param name="speed"></param>
         public abstract void Accelerate(int speed);
+        /// <summary>
+        /// Decelerates the vehicle speed by the number given in parameter
+        /// </summary>
+        /// <param name="speed"></param>
         public abstract void Decelerate(int speed);
     }
 
