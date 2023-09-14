@@ -41,7 +41,10 @@ namespace VehiclesLibrary.WaterVehicles
         public void StartOn()
         {
             if (!IsStarted)
+            {
                 IsStarted = true;
+                Console.WriteLine("Vehicle is turned on \n");
+            }
             else
                 IsStarted = false;
         }
@@ -55,6 +58,7 @@ namespace VehiclesLibrary.WaterVehicles
             {
                 IsStarted = false;
                 Speed = 0;
+                Console.WriteLine("Vehicle is turned off \n");
             }
             else
                 IsStarted = true;
